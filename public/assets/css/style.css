@@ -1,0 +1,282 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+  padding: 20px;
+}
+
+/* Header Design */
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  background-color: #000;
+  color: white;
+  flex-wrap: wrap;
+  border-radius: 80px;
+  font-weight: 600;
+}
+
+.logo {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size:24px;
+  gap:20px
+}
+
+.nav {
+  display: flex;
+  gap: 16px;
+  position: relative;
+}
+
+.nav-item {
+  cursor: pointer;
+  position: relative;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  color: black;
+  border: 1px solid #ccc;
+  width: 180px;
+  z-index: 1;
+}
+
+.dropdown a {
+  display: block;
+  padding: 8px;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown a:hover {
+  background-color: #eee;
+}
+
+.nav-item:hover .dropdown {
+  display: block;
+}
+
+/* Responsive Navigation */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+  }
+}
+
+/* Grid System */
+/* .egegen-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.item {
+  border: 1px solid #ddd;
+  background-color: #f5f5f5;
+  padding: 12px;
+  min-height: 80px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.col-1  { width: calc((100% / 12) * 1 - 10px); }
+.col-2  { width: calc((100% / 12) * 2 - 10px); }
+.col-3  { width: calc((100% / 12) * 3 - 10px); }
+.col-4  { width: calc((100% / 12) * 4 - 10px); }
+.col-5  { width: calc((100% / 12) * 5 - 10px); }
+.col-6  { width: calc((100% / 12) * 6 - 10px); }
+.col-7  { width: calc((100% / 12) * 7 - 10px); }
+.col-8  { width: calc((100% / 12) * 8 - 10px); }
+.col-9  { width: calc((100% / 12) * 9 - 10px); }
+.col-10 { width: calc((100% / 12) * 10 - 10px); }
+.col-11 { width: calc((100% / 12) * 11 - 10px); }
+.col-12 { width: 100%; }
+
+@media (max-width: 768px) {
+  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6,
+  .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+    width: 100%;
+  }
+  .row-2x {
+    height: auto;
+  }
+} */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12 eşit genişlikte sütun */
+  grid-template-rows: repeat(3, auto); /* 3 otomatik yükseklikte satır, içeriğe göre ayarlanır */
+  gap: 10px;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.grid-item {
+  background-color: #fff;
+  background-image:  url('../img/grid-hover.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100px;
+  border: 2px solid #333;
+  padding: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  box-sizing: border-box; /* Padding'in genişliğe dahil olmasını sağlar */
+}
+
+/* Her bir öğenin konumunu belirleme */
+
+/* İlk büyük kare (sol üst) */
+.item-1 {
+  grid-column: 1 / span 5; /* 1. sütundan başla, 2 sütun genişliğinde ol */
+  grid-row: 1 / span 2; /* 1. satırdan başla, 2 satır yüksekliğinde ol */
+}
+
+/* Üst sağdaki ilk küçük kare */
+.item-2 {
+  grid-column: 6 / span 3; /* 3. sütun */
+  grid-row: 1; /* 1. satır */
+}
+
+/* Üst sağdaki ikinci küçük kare */
+.item-3 {
+  grid-column: 6 / span 3; /* 3. sütun */
+  grid-row: 2; /* 2. satır */
+}
+
+/* En sağdaki büyük kare */
+.item-4 {
+  grid-column: 9 / span 4; /* 4. sütundan başla, 2 sütun genişliğinde ol */
+  grid-row: 1 / span 2; /* 1. satırdan başla, 2 satır yüksekliğinde ol */
+}
+
+/* Sol alttaki küçük kare */
+.item-5 {
+  grid-column: 1 / span 3; /* 1. sütun */
+  grid-row: 3; /* 3. satır */
+}
+
+/* Ortadaki geniş kare */
+.item-6 {
+  grid-column: 4 / span 5; /* 2. sütundan başla, 2 sütun genişliğinde ol */
+  grid-row: 3; /* 3. satır */
+}
+
+/* En sağdaki büyük kare (aşağıdaki) */
+.item-7 {
+  grid-column: 9 / span 4; /* 4. sütundan başla, 2 sütun genişliğinde ol */
+  grid-row: 3 / span 2; /* 3. satır */
+}
+
+/* Resimdeki en alt sıradaki sol geniş dikdörtgen */
+.item-8 {
+  grid-column: 1 / span 5; /* 1. sütundan başla, 3 sütun genişliğinde ol */
+  grid-row: 4; /* 4. satır */
+}
+
+/* Resimdeki en alt sıradaki sağ küçük kare */
+.item-9 {
+  grid-column: 6 / span 3; /* 4. sütundan başla, 2 sütun genişliğinde ol */
+  grid-row: 4; /* 4. satır */
+}
+
+/* Grid satırlarını görseldeki gibi ayarlamak için */
+.grid-container {
+  grid-template-rows: auto auto auto auto; /* 4 satır tanımladık, ihtiyaca göre */
+}
+
+/* Responsive tasarım */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(9, 150px);
+    height: auto;
+  }
+
+  .grid-item {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+  }
+}
+
+/* Hover efekti */
+.grid-item:hover {
+  background-color: #000;
+  /* transform: scale(1.02); */
+  transition: all 0.3s ease-in-out;
+
+}
+
+.row-1x { height: 100px; }
+.row-2x { height: 212px; } /* 2 katı + boşluk için +12px fark verdik */
+
+/* Accordion Style */
+.egegen-accordion {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  font-family: sans-serif;
+}
+
+.egegen-accordion-item {
+  border: 1px solid #ccc;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.egegen-accordion-header {
+  background-color: #f0f0f0;
+  padding: 12px 16px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.egegen-accordion-content {
+  padding: 12px 16px;
+  display: none;
+  background-color: white;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+
+/* Mobil uyum: Ekran 480px'den küçükse font ve padding küçültülür */
+@media (max-width: 480px) {
+  .egegen-accordion-header {
+    padding: 10px 14px;
+    font-size: 0.95rem;
+  }
+
+  .egegen-accordion-content {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+}

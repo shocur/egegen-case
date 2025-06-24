@@ -1,0 +1,116 @@
+{
+  "info": {
+    "name": "Egegen Laravel Case",
+    "_postman_id": "f8c42ae9-2b0b-4f7c-b3c1-34db812eaf6d",
+    "description": "Egegen için Laravel 11 API test collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Haber Ekle",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer 2BH52wAHrAymR7wP3CASt",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "title",
+              "value": "Test Haberi",
+              "type": "text"
+            },
+            {
+              "key": "content",
+              "value": "Bu bir test haber içeriğidir.",
+              "type": "text"
+            },
+            {
+              "key": "image",
+              "type": "file",
+              "src": ""
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/news",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "news"]
+        }
+      }
+    },
+    {
+      "name": "Tüm Haberleri Listele",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer 2BH52wAHrAymR7wP3CASt",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/api/news",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "news"]
+        }
+      }
+    },
+    {
+      "name": "Haber Ara (Search)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer 2BH52wAHrAymR7wP3CASt",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/api/news?search=test",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "news"],
+          "query": [
+            {
+              "key": "search",
+              "value": "test"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Haber Sil",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer 2BH52wAHrAymR7wP3CASt",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/api/news/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "news", "1"]
+        }
+      }
+    }
+  ]
+}
