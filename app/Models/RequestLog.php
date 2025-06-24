@@ -13,5 +13,6 @@ class RequestLog extends Model
         'ip',
         'method',
         'url',
+        'status_code'
     ];
 }
