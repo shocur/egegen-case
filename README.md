@@ -14,7 +14,8 @@
 * php artisan db:seed
 * php artisan serve
 
-### Authorization: Bearer 2BH52wAHrAymR7wP3CASt
+## Authorization
+* Token: Bearer 2BH52wAHrAymR7wP3CASt
 
 ## About Laravel
 
